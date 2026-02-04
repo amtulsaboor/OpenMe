@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Only Mine ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Comic Sans MS', 'Poppins', cursive;
+        background: linear-gradient(135deg, #ff4e78, #ff85a2);
+        color: #fff;
+        text-align: center;
+        overflow-x: hidden;
+        transition: background 1s ease;
+    }
+
+    .container {
+        padding: 40px 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    h2, h3 { margin: 8px 0; }
+    p { font-size: 1.1rem; margin-bottom: 18px; }
+
+    .gif {
+        max-width: 260px;
+        border-radius: 18px;
+        margin: 20px 0;
+    }
+
+    .buttons { position: relative; height: 200px; margin-top: 30px; }
+    button {
+        padding: 14px 30px;
+        font-size: 18px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+        background: #ff0033;
+        color: white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    }
+
+    #yesBtn:hover { transform: scale(1.15); }
+    #noBtn {
+        background: #ffffff;
+        color: #ff0033;
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hidden { display: none; }
+    .final { animation: pop 0.6s ease; }
+    @keyframes pop { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+    .heart, .kiss {
+        position: fixed;
+        bottom: -10px;
+        font-size: 26px;
+        animation: float 6s linear infinite;
+        opacity: 0.8;
+        z-index: 5;
+    }
+
+    @keyframes float { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-100vh); opacity: 0; } }
+
+    .tap { font-size: 0.9rem; opacity: 0.85; margin-top: 15px; }
+
+    iframe { display: none; }
+
+    /* Screen dark overlay */
+    #overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0);
+        pointer-events: none;
+        z-index: 1;
+        transition: background 1s ease;
+    }
+
+    /* Whisper text */
+    #whisper {
+        position: fixed;
+        top: 40%; left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        opacity: 0;
+        color: #ffccd5;
+        text-shadow: 0 0 12px #ff66a3;
+        z-index: 3;
+        transition: opacity 2s ease;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Bollywood Romantic Song -->
+<iframe id="ytMusic"
+src="https://www.youtube.com/embed/i0_b0Lr6QGk?enablejsapi=1&loop=1&playlist=i0_b0Lr6QGk"
+allow="autoplay"></iframe>
+
+<div id="overlay"></div>
+<div id="whisper">Close your eyes… feel me 😏💖</div>
+
+<div class="container" id="step1">
+    <h1>Hey Aasim 😏❤️</h1>
+    <p>⚠️ Warning ⚠️<br>May cause smiling, blushing & missing me badly 😌</p>
+    <img class="gif" src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyMWcyYnV5M20zOGpmdjc5Y2c1czUxenpha3NsNno2b2UxNDFjM3E5ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5ubHiAtBlv9lSlhVld/giphy.gif">
+    <p>I have ONE question… think carefully 👀</p>
+    <h1>Will you be my Valentine? 💘</h1>
+    <div class="buttons">
+        <button id="yesBtn">YES 😍</button>
+        <button id="noBtn">NO 🙄</button>
+    </div>
+    <p class="tap">👆 Tap anywhere to start the vibe 🎶</p>
+</div>
+
+<div class="container hidden final" id="step2">
+    <h1>Mmm… good boy 😌🔥</h1>
+    <img class="gif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
+    <p>Congratulations Aasim…<br>You are officially:</p>
+    <p>💋 Claimed by me <br>🔥 Kissed passionately <br>😈 Teased endlessly <br>🤍 Loved deeply <br>❤️ Mine. Forever.</p>
+    <h2>Come here… 💋</h2>
+    <h3>— Saboor 😘</h3>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const step1 = document.getElementById("step1");
+const step2 = document.getElementById("step2");
+const ytFrame = document.getElementById("ytMusic");
+const overlay = document.getElementById("overlay");
+const whisper = document.getElementById("whisper");
+
+let scale = 1;
+let musicStarted = false;
+
+function moveNo() {
+    alert("😂 Nice try… NO was never an option 😈");
+    scale -= 0.1;
+    if(scale < 0.3) scale = 0.3;
+    noBtn.style.left = Math.random()*80 + "%";
+    noBtn.style.top = Math.random()*70 + "%";
+    noBtn.style.transform = `scale(${scale})`;
+}
+
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("click", moveNo);
+
+yesBtn.addEventListener("click", () => {
+    step1.classList.add("hidden");
+    step2.classList.remove("hidden");
+    startRomance();
+});
+
+function startRomance() {
+    // Hearts + kisses
+    for(let i=0;i<50;i++){
+        const el = document.createElement("div");
+        el.className = Math.random()>0.5?"heart":"kiss";
+        el.innerHTML = Math.random()>0.5?"❤️":"💋";
+        el.style.left = Math.random()*100+"vw";
+        el.style.animationDuration = (Math.random()*3 + 3)+"s";
+        document.body.appendChild(el);
+        setTimeout(()=>el.remove(),6000);
+    }
+
+    // Overlay darken + heartbeat
+    overlay.style.background = "rgba(0,0,0,0.5)";
+    document.body.style.transition = "background 1s";
+    
+    // Whisper text appear
+    whisper.style.opacity = 1;
+    setTimeout(()=> whisper.style.opacity = 0, 4000);
+}
+
+// Start Bollywood song on first click anywhere
+document.body.addEventListener("click", () => {
+    if(!musicStarted){
+        ytFrame.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            '*'
+        );
+        musicStarted = true;
+    }
+});
+</script>
+
+</body>
+</html>
