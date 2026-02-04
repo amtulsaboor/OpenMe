@@ -2,185 +2,176 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Aasim’s Valentine Surprise ❤️</title>
+<title>Aasim’s Naughty Valentine 😈❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
 body {
-    margin:0;
-    font-family:'Comic Sans MS', 'Poppins', cursive;
-    background: linear-gradient(135deg,#ff4e78,#ff85a2);
-    color:#fff;
-    text-align:center;
-    overflow-x:hidden;
-    transition: background 1s ease;
+  margin:0;
+  font-family:'Comic Sans MS','Poppins',cursive;
+  background: linear-gradient(135deg,#ff4e78,#ff85a2);
+  color:#fff;
+  text-align:center;
+  overflow-x:hidden;
+  transition: background 1s ease;
 }
-
-.container{
-    padding:40px 20px;
-    position:relative;
-}
-
-h1{font-size:2.5rem;margin-bottom:10px;}
-h2,h3{margin:8px 0;}
-p{font-size:1.1rem;margin-bottom:18px;}
-
-.gif{max-width:260px;border-radius:18px;margin:20px 0;}
-
-.buttons{position:relative;height:200px;margin-top:30px;}
+h1{font-size:2.5rem;margin:10px 0;}
+p{font-size:1.2rem;margin:10px 0;}
 button{
-    padding:14px 30px;font-size:18px;border:none;border-radius:30px;
-    cursor:pointer;transition: all 0.3s ease;
+  padding:12px 28px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  margin:10px;
+  transition: all 0.3s ease;
 }
+#yesBtn{background:#ff0033;color:white;box-shadow:0 8px 20px rgba(0,0,0,0.35);}
+#next1,#next2,#next3,#next4,#comeHereBtn{background:#ff69b4;color:white;box-shadow:0 8px 20px rgba(0,0,0,0.35);}
+#noBtn{background:#fff;color:#ff0033;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
 
-#yesBtn{background:#ff0033;color:white;box-shadow:0 10px 25px rgba(0,0,0,0.35);}
-#yesBtn:hover{transform:scale(1.15);}
-#noBtn{background:#fff;color:#ff0033;position:absolute;left:50%;top:60%;transform:translate(-50%,-50%);}
-
-.hidden{display:none;}
-.final{animation:pop 0.6s ease;}
-@keyframes pop{0%{transform:scale(0.5);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.gif{max-width:260px;border-radius:18px;margin:15px 0;}
 
 .heart,.kiss{
-    position:fixed;bottom:-10px;font-size:26px;
-    animation:float 6s linear infinite;opacity:0.8;z-index:5;
+  position:fixed;
+  bottom:-10px;
+  font-size:26px;
+  animation:float 6s linear infinite;
+  opacity:0.8;
+  z-index:5;
 }
 @keyframes float{0%{transform:translateY(0);opacity:1;}100%{transform:translateY(-100vh);opacity:0;}}
 
-#whisper{
-    position:fixed;top:40%;left:50%;
-    transform:translate(-50%,-50%);
-    font-size:2rem;opacity:0;color:#ffccd5;
-    text-shadow:0 0 12px #ff66a3;
-    z-index:3;transition:opacity 1.5s ease;
-}
-
 #bigKiss{
-    position:fixed;top:50%;left:50%;
-    transform:translate(-50%,-50%) scale(0);
-    font-size:10rem;z-index:10;transition:transform 2s ease;
+  position:fixed;top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  font-size:12rem;z-index:10;transition:transform 2s ease;
 }
 </style>
 </head>
 <body>
 
-<!-- Sound effects -->
-<audio id="sound1" src="https://www.soundjay.com/human/cheer-1.mp3"></audio>
-<audio id="sound2" src="https://www.soundjay.com/human/kiss-1.mp3"></audio>
-<audio id="sound3" src="https://www.soundjay.com/human/laugh-1.mp3"></audio>
-
-<div id="whisper">Close your eyes… feel me 😏💖</div>
-<div id="bigKiss">💋</div>
+<!-- Sounds -->
+<audio id="sound1" src="https://www.soundjay.com/human/kiss-1.mp3"></audio>
+<audio id="sound2" src="https://www.soundjay.com/human/laugh-1.mp3"></audio>
 
 <!-- Page 1 -->
-<div class="container" id="page1">
-    <h1>Hey Aasim 😏❤️</h1>
-    <p>Warning ⚠️: This site may cause uncontrollable smiling and blushing 😌</p>
-    <img class="gif" src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyMWcyYnV5M20zOGpmdjc5Y2c1czUxenpha3NsNno2b2UxNDFjM3E5ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5ubHiAtBlv9lSlhVld/giphy.gif">
-    <p>So… will you be my Valentine? 💘</p>
-    <div class="buttons">
-        <button id="yesBtn">YES 😍</button>
-        <button id="noBtn">NO 🙄</button>
-    </div>
-    <p class="tap">👆 Move mouse or click anywhere to start the fun</p>
+<div id="page1">
+  <h1>Hey Aasim 😏❤️</h1>
+  <p>Warning ⚠️: This page may cause blushing and naughty thoughts 😈</p>
+  <img class="gif" src="https://media.giphy.com/media/5ubHiAtBlv9lSlhVld/giphy.gif">
+  <p>Will you be my Valentine? 💘</p>
+  <button id="yesBtn">YES 😍</button>
+  <button id="noBtn">NO 🙄</button>
 </div>
 
 <!-- Page 2 -->
-<div class="container hidden" id="page2">
-    <h1>Wow… good choice 😌🔥</h1>
-    <p>First reward unlocked: floating hearts & kisses 🎉</p>
-    <p>💡 Joke: Why did the chocolate propose to the candy? Because it found its sweet match 😏</p>
+<div id="page2" style="display:none;">
+  <h1>Haha, good choice 😏🔥</h1>
+  <p>Joke: Why did the candle wink at the chocolate? Because it wanted a little hot melt 😈🍫</p>
+  <img class="gif" src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
+  <button id="next1">Next 🔥</button>
 </div>
 
 <!-- Page 3 -->
-<div class="container hidden" id="page3">
-    <h1>Feeling loved yet? 💖</h1>
-    <p>💡 Joke: Are you a magician? Because whenever I look at you, everyone else disappears 😏</p>
-    <p>Reward unlocked: extra kisses 💋 + floating hearts ❤️</p>
+<div id="page3" style="display:none;">
+  <h1>Feeling naughty yet? 😈</h1>
+  <p>Joke: I must be a snowflake, because I’ve fallen for you… and want you to melt 😏❄️</p>
+  <img class="gif" src="https://media.giphy.com/media/3oEdv1RF1jJb5z5Xq0/giphy.gif">
+  <button id="next2">Next 😘</button>
 </div>
 
 <!-- Page 4 -->
-<div class="container hidden" id="page4">
-    <h1>Almost there… 😈</h1>
-    <p>💡 Joke: I must be a snowflake, because I’ve fallen for you ❄️😏</p>
-    <p>Click the next button to see your final Valentine surprise…</p>
-    <button id="comeHereBtn">Come here 💋</button>
+<div id="page4" style="display:none;">
+  <h1>Almost there 😏🔥</h1>
+  <p>Joke: Are you a magician? Because you make my clothes disappear… in my imagination 😈✨</p>
+  <img class="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+  <button id="next3">Next 😈</button>
 </div>
 
 <!-- Page 5 -->
-<div class="container hidden final" id="page5">
-    <h1>Mmm… you came 😘</h1>
-    <p>Final reward unlocked: 💋 KISS SCREEN 😍</p>
-    <p>💡 Joke: I like my men like I like my coffee… hot, strong and keeping me awake all night 😏☕</p>
+<div id="page5" style="display:none;">
+  <h1>Mmm… ready for the big finale 😘💋</h1>
+  <p>Joke: I like my men like my coffee: hot, strong, and keeping me awake all night 😏☕</p>
+  <img class="gif" src="https://media.giphy.com/media/3o7TKtmCkRTHt6K1DQ/giphy.gif">
+  <button id="comeHereBtn">Come here 💋</button>
 </div>
+
+<div id="bigKiss">💋</div>
 
 <script>
 const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
-const comeHereBtn = document.getElementById("comeHereBtn");
 const pages = ["page1","page2","page3","page4","page5"];
 let currentPage = 0;
 let scale = 1;
-
-// Sounds
 const sound1 = document.getElementById("sound1");
 const sound2 = document.getElementById("sound2");
-const sound3 = document.getElementById("sound3");
 
+// NO button moves constantly
 function moveNo(){
-    scale -=0.05;
-    if(scale<0.3) scale=0.3;
-    noBtn.style.left = Math.random()*80+"%";
-    noBtn.style.top = Math.random()*70+"%";
-    noBtn.style.transform = `scale(${scale})`;
+  scale -=0.02;
+  if(scale<0.3) scale=0.3;
+  noBtn.style.left = Math.random()*80+"%";
+  noBtn.style.top = Math.random()*70+"%";
+  noBtn.style.transform=`scale(${scale})`;
+  alert("NO was never an option 😈");
 }
-
 noBtn.addEventListener("mouseover", moveNo);
-noBtn.addEventListener("click", moveNo);
 
+// YES button to next page
 yesBtn.addEventListener("click", ()=>{
-    nextPage();
-    createHeartsAndKisses();
-    sound1.play();
+  nextPage();
+  createHeartsAndKisses();
+  sound1.play();
 });
 
-comeHereBtn.addEventListener("click", ()=>{
-    nextPage();
-    sound2.play();
-    // make big kiss
-    const bigKiss = document.getElementById("bigKiss");
-    bigKiss.style.transform="translate(-50%,-50%) scale(15)";
-    // also little hearts
-    for(let i=0;i<50;i++){
-        const el = document.createElement("div");
-        el.className = Math.random()>0.5?"heart":"kiss";
-        el.innerHTML = Math.random()>0.5?"❤️":"💋";
-        el.style.left = Math.random()*100+"vw";
-        el.style.animationDuration = (Math.random()*3 + 3)+"s";
-        document.body.appendChild(el);
-        setTimeout(()=>el.remove(),6000);
-    }
+// Next buttons
+document.getElementById("next1").addEventListener("click",()=>{
+  nextPage();createHeartsAndKisses();sound2.play();
+});
+document.getElementById("next2").addEventListener("click",()=>{
+  nextPage();createHeartsAndKisses();sound2.play();
+});
+document.getElementById("next3").addEventListener("click",()=>{
+  nextPage();createHeartsAndKisses();sound2.play();
+});
+
+// Final kiss button
+document.getElementById("comeHereBtn").addEventListener("click",()=>{
+  nextPage();
+  sound1.play();
+  const bigKiss = document.getElementById("bigKiss");
+  bigKiss.style.transform="translate(-50%,-50%) scale(15)";
+  // little floating hearts/kisses
+  for(let i=0;i<50;i++){
+    const el=document.createElement("div");
+    el.className = Math.random()>0.5?"heart":"kiss";
+    el.innerHTML = Math.random()>0.5?"❤️":"💋";
+    el.style.left=Math.random()*100+"vw";
+    el.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),6000);
+  }
 });
 
 function nextPage(){
-    document.getElementById(pages[currentPage]).classList.add("hidden");
-    currentPage++;
-    if(currentPage>=pages.length) currentPage=pages.length-1;
-    document.getElementById(pages[currentPage]).classList.remove("hidden");
+  document.getElementById(pages[currentPage]).style.display="none";
+  currentPage++;
+  if(currentPage>=pages.length)currentPage=pages.length-1;
+  document.getElementById(pages[currentPage]).style.display="block";
 }
 
 function createHeartsAndKisses(){
-    for(let i=0;i<30;i++){
-        const el = document.createElement("div");
-        el.className = Math.random()>0.5?"heart":"kiss";
-        el.innerHTML = Math.random()>0.5?"❤️":"💋";
-        el.style.left = Math.random()*100+"vw";
-        el.style.animationDuration = (Math.random()*3 + 3)+"s";
-        document.body.appendChild(el);
-        setTimeout(()=>el.remove(),6000);
-    }
+  for(let i=0;i<30;i++){
+    const el=document.createElement("div");
+    el.className=Math.random()>0.5?"heart":"kiss";
+    el.innerHTML=Math.random()>0.5?"❤️":"💋";
+    el.style.left=Math.random()*100+"vw";
+    el.style.animationDuration=(Math.random()*3+3)+"s";
+    document.body.appendChild(el);
+    setTimeout(()=>el.remove(),6000);
+  }
 }
 </script>
-
 </body>
 </html>
